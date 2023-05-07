@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite" parallel="tests" thread-count="2">
+	<listeners>
+		<listener class-name="testNG.learning.Listeners" />
+	</listeners>
+	<parameter name="url" value="http://google.com" /> <!-- parameter!-->
+	<test name="Personal Loan">
+		<classes>
+			<class name="testNG.learning.Day1" />
+		</classes>
+	</test>
+	<test name="Loans">
+		<classes>
+			<class name="testNG.learning.Day2">
+				<methods>
+					<exclude name="Day2CarLoanLogin" /> <!-- execulde or include the specific method from the run!-->
+				</methods>
+			</class>
+			<class name="testNG.learning.Day3">
+				<methods>
+					<exclude name="Day3.*" /> <!--exclude or include the class methods using regex!-->
+				</methods>
+			</class>
+		</classes>
+	</test>
+</suite>
